@@ -22,16 +22,19 @@ def inicio(request):
 
 
 def redirigir(request):
+
     user = request.user
-    ascensor = OrdenTrabajo.objects.filter(
-        fecha__lte=timezone.now()).order_by('fecha')
-       if user.('ascensor.admin'):
-            return render(request, 'ascensor/inicio.html', {'ascensor': ascensor})
-        else:
-            return render(request, 'ascensor/inicio.html', {'ascensor': ascensor}) 
+    elevador = RegistroCliente.object.order_by('Nombre_Completo')
+    if user.has_perm('ascensor.admin'):
+        return render(request, 'ascensor/inicio.html', {'elevador': elevador}) 
+    else:
+        return render(request, 'ascensor/inicio.html',{'elevador': elevador})   
 
 
-        def login(request):
+def login(request):
         return render(request, 'iniciosesion/login.html', {})
 
-        def redirigir(request):
+
+def administrador(request):
+    admin = RegistroCliente.objects.order_by('Nombre_Completo')
+    return render(request, 'ascensor/administrador.html', {'admin': admin})

@@ -3,4 +3,5 @@ from .models import OrdenTrabajo,RegistroCliente
 
 
 admin.site.register(OrdenTrabajo)
+admin.site.register(RegistroCliente)
 

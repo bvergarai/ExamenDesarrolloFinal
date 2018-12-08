@@ -27,10 +27,13 @@ class OrdenTrabajo (models.Model):
         self.save()
 
 class RegistroCliente (models.Model):
-    author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     Nombre_Completo = models.CharField(max_length=200, blank=True, null=True)
     Direccion = models.CharField(max_length=200, blank=True, null=True)
     Ciudad = models.CharField(max_length=200, blank=True, null=True)
     Comuna = models.CharField(max_length=200, blank=True, null=True)
     Correo = models.EmailField(blank=True, null=True)
+
+    def __str__(self):
+        return self.Nombre_Completo
+    
 

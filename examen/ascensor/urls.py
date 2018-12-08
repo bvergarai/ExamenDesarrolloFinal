@@ -7,4 +7,5 @@ urlpatterns = [
      url(r'^$', views.inicio, name="paginaprincipal"),
      url('trabajadores/inicio', views.redirigir, name="redirigir"),
      url('trabajadores/login', views.login , name="login"),
+      url('administrador',views.administrador, name="adm.inicio" ),
 ]

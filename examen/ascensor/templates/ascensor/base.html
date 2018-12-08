@@ -52,9 +52,22 @@
                  <input type="checkbox" id="menu-bar">
                  <label class="icon-menu" for="menu-bar"></label>
                  <nav class="menu">
+                        {% if user.is_authenticated %}
+                         {% if user.username == "admin" %}
+                         <a href="{% url 'adm.inicio' %}"> Administracion </a>
+                         {% else  %}
+          
+                         {% endif %}
+                
+                          {% endif %}
+                          {% if user.is_authenticated %}
+                          <li><a href="{% url 'logout' %}">Cerrar Sesion ({{user.username}}) </a> </li>
+                          {% else %}
                      <a href="{% url 'login' %}"> Trabajadores </a>
                      <a href="#"> Quienes Somos </a>
                      <a href="#"> Contactenos </a>
+                     {% endif %}
+                     
                 </nav>
     </div>
 </header>
