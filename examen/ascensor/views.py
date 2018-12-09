@@ -24,7 +24,8 @@ def inicio(request):
 def redirigir(request):
 
     user = request.user
-    elevador = OrdenTrabajo.object.all()
+    elevador = OrdenTrabajo.objects.filter(
+        fecha__lte=timezone.now()).order_by('fecha')
     if user.has_perm('ascensor.admin'):
         return render(request, 'ascensor/inicio.html', {'elevador': elevador})
     else:
