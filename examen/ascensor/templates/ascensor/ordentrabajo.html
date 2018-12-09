@@ -1,0 +1,14 @@
+{% extends 'ascensor/base.html' %}
+{% block content %}
+{% load staticfiles %}
+
+<main>
+
+<section id="banner">
+ <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+ </form>
+</section>
+</main>
+{% endblock %}

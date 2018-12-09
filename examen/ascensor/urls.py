@@ -7,5 +7,7 @@ urlpatterns = [
      url(r'^$', views.inicio, name="paginaprincipal"),
      url('trabajadores/inicio', views.redirigir, name="redirigir"),
      url('trabajadores/login', views.login , name="login"),
-      url('administrador',views.administrador, name="adm.inicio" ),
+      path('agregarclientes',views.agregarclientes, name="adm.inicio" ),
+      path('crearficha',views.crearficha, name="orden"),
+     url('trabajadores/clientes', views.verClientes, name="clientes"),
 ]
