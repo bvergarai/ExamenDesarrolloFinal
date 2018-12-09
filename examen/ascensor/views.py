@@ -24,7 +24,7 @@ def inicio(request):
 def redirigir(request):
 
     user = request.user
-    elevador = OrdenTrabajo.object.order_by('fecha')
+    elevador = OrdenTrabajo.object.all()
     if user.has_perm('ascensor.admin'):
         return render(request, 'ascensor/inicio.html', {'elevador': elevador})
     else:
@@ -32,7 +32,7 @@ def redirigir(request):
 
 
 def login(request):
-        return render(request, 'iniciosesion/login.html', {})
+        return render(request, 'registration/login.html', {})
 
 
 def agregarclientes(request):
@@ -53,7 +53,7 @@ def agregarclientes(request):
            return redirect('adm.inicio')
    else:
        form = RegistroCliente_form()
-   return render(request, 'ascensor/administrador.html', {'form': form})
+   return render(request, 'ascensor/agregarclientes.html', {'form': form})
 
    #Vista para ventana de ficha
    def crearficha(request):

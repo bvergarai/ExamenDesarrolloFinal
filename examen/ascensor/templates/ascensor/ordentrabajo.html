@@ -1,14 +1,17 @@
-{% extends 'ascensor/base.html' %}
+
 {% block content %}
 {% load staticfiles %}
 
-<main>
+<main2>
 
-<section id="banner">
+<section id="">
  <form method="post">
         {% csrf_token %}
         {{form.as_p}}
+        <a href="localhost:8000" class="btn btn-info btn-cancelar" >Cancelar</a>
+        <button type='submit' class="save btn btn-info btn-cancelar">Guardar</button>
  </form>
+
 </section>
-</main>
+</main2>
 {% endblock %}

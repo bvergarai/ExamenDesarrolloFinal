@@ -15,7 +15,8 @@ class RegistroCliente_form(forms.ModelForm):
 class OrdenTrabajo_form(forms.ModelForm):
 	class Meta:
 		model = OrdenTrabajo
-		fields = ['Folio',
+		fields = [  
+                    'Folio',
                     'Cliente',
                     'fecha',
                     'hora_inicio',

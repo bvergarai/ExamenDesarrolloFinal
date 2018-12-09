@@ -26,22 +26,22 @@ urlpatterns = [
     path('trabajadores/', include('django.contrib.auth.urls')),
     path('password-reset/',
          auth_views.PasswordResetView.as_view(
-             template_name='iniciosesion/pass_reset.html'
+             template_name='registration/pass_reset.html'
          ),
          name='pass_reset'), 
          path('password-reset/done',
          auth_views.PasswordResetDoneView.as_view(
-             template_name='iniciosesion/pass_reset_don.html'
+             template_name='registration/pass_reset_don.html'
          ),
          name='pass_reset_done'),
     path('password-reset-confirm/<uidb64>/<token>/',
          auth_views.PasswordResetConfirmView.as_view(
-             template_name='iniciosesion/pass_reset_confirmar.html'
+             template_name='registration/pass_reset_confirmar.html'
          ),
          name='pass_reset_confirm'),
     path('password-reset-complete/',
          auth_views.PasswordResetCompleteView.as_view(
-             template_name='iniciosesion/pass_reset_completo.html'
+             template_name='registration/pass_reset_completo.html'
          ),
          name='pass_reset_complete'),  
 ]
