@@ -31,12 +31,16 @@ class RegistroCliente (models.Model):
     Comuna = models.CharField(max_length=200, blank=True, null=True)
     Correo = models.EmailField(blank=True, null=True)
     fecha_publicacion = models.DateTimeField(blank=True, null=True)
+    Tecnico_Asociado = models.ForeignKey('auth.User', on_delete=models.CASCADE, null=True)
   
 
-    def __str__(self):
+    def _str_(self):
         return self.Nombre_Completo
 
     def publish(self):
         self.fecha_publicacion = timezone.now()
         self.save()
+
+    def __str__(self):
+        return '{}'.format(self.Tecnico_Asociado)
 

@@ -10,7 +10,7 @@ from django.conf import settings
 class RegistroCliente_form(forms.ModelForm):
 	class Meta:
 		model = RegistroCliente
-		fields = ('Nombre_Completo', 'Direccion', 'Ciudad', 'Comuna', 'Correo', )
+		fields = ('Nombre_Completo', 'Direccion', 'Ciudad', 'Comuna', 'Correo','Tecnico_Asociado' )
 
 class OrdenTrabajo_form(forms.ModelForm):
 	class Meta:

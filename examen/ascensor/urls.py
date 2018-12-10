@@ -10,4 +10,7 @@ urlpatterns = [
       path('agregarclientes',views.agregarclientes, name="adm.inicio" ),
       path('crearficha',views.crearficha, name="orden"),
      url('trabajadores/clientes', views.verClientes, name="clientes"),
+     url('trabajadores/clientesadm', views.verClientesAdmin, name="clientes.adm"),
+     url('trabajadores/fichas', views.verFichas, name="fichas"),
+     url('trabajadores/fichasadm', views.verFichasAdmin, name="fichas.adm"),
 ]

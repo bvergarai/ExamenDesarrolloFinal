@@ -57,28 +57,35 @@
                         {% if user.is_authenticated %}
                          {% if user.username == "admin" %}
                          <a href="{% url 'adm.inicio' %}"> Agregar Clientes </a>
-                         <a href="{% url 'clientes' %}">Ver Clientes</a>
+                        <!---   <a href="{% url 'clientes.adm' %}">Clientes</a>  --> 
+                         <!--  <a href="{% url 'fichas.adm' %}">Fichas</a> -->
                          {% else  %} 
                         <a href="{% url 'clientes' %}">Ver Clientes</a>
+                        <a href="{% url 'fichas' %}">Ver Fichas</a>
                          {% endif %}
                     
                           {% endif %}
                           {% if user.is_authenticated %}
                           <a href="{% url 'logout' %}">Cerrar Sesion ({{user.username}}) </a>
+                          <a href="http://localhost:8000/">Ir a Inicio</a>
                           {% else %}
                      <a href="{% url 'login' %}"> Trabajadores </a>
                      <a href="#"> Quienes Somos </a>
                      <a href="#"> Contactenos </a>
+                     <a href="http://localhost:8000/">Ir a Inicio</a>
                      {% endif %}
                      
                 </nav>
     </div>
 </header>
 
+
+
+
+
             {% block content %}
             {% endblock %}
-
-            <footer>
+<footer>
 
                     <div class="contenedor">
                         <p class="copy">Elevator Service &copy; 2018 </p>
@@ -90,5 +97,6 @@
                         </div>
                     </div>
                 </footer>
+            
 </body>
 </html>

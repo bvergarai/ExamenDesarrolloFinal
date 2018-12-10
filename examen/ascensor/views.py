@@ -77,7 +77,30 @@ def crearficha(request):
        form = OrdenTrabajo_form()
    return render(request, 'ascensor/ordentrabajo.html', {'form': form})
 
-   #vista de clientes disponibles
+   #vista de clientes disponibles para cada usuario
 def verClientes(request):
-    clientes = RegistroCliente.objects.all()
+    user = request.user
+    clientes = RegistroCliente.objects.filter(Tecnico_Asociado = user)
     return render(request, 'ascensor/clientes.html',  {'clientes': clientes})
+
+    #vista de clientes ADMIN
+
+def verClientesAdmin (request):
+    clientess = RegistroCliente.objects.all
+    return render(request, 'ascensor/clientesadm.html',  {'clientess': clientess})
+
+    #VISTA PARA VER FORMULARIOS
+
+
+    #Ver fichas de cada tecnico
+def  verFichas (request):
+    user = request.user
+    orden = OrdenTrabajo.objects.filter(Nombre_Tecnico = user)
+    return render(request, 'ascensor/fichas.html', {'orden': orden})
+
+
+#ver todas las fichas ADM
+
+def verFichasAdmin (request):
+    orden = OrdenTrabajo.objects.all()
+    return render(request, 'ascensor/fichasadm.html', {'orden': orden})
